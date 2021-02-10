@@ -175,7 +175,7 @@ where ID: Hashable {
 
   public mutating func removeAll(where shouldBeRemoved: (Element) throws -> Bool) rethrows {
     var ids: [ID] = []
-    for (index, id) in zip(self.ids.indices, self.ids).reversed() {
+    for (index, id) in Swift.zip(self.ids.indices, self.ids).reversed() {
       if try shouldBeRemoved(self.dictionary[id]!) {
         self.ids.remove(at: index)
         ids.append(id)
